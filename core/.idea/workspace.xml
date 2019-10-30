@@ -6,28 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf0d7099-d04b-4d72-8974-c9ae50591284" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/core/META-INF/core.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/core/com/lobby/community/Listener$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/lobby/community/Listener$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/core/com/lobby/community/Listener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/lobby/community/Listener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/core/com/messenger/MessengerController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/messenger/MessengerController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/core/com/messenger/MessengerController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/messenger/MessengerController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/core/com/messenger/MessengerController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/messenger/MessengerController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/core/com/messenger/MessengerController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/messenger/MessengerController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/core/com/messenger/MessengerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/messenger/MessengerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/core/com/messenger/Sender.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/messenger/Sender.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/core/com/protocols/PMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/protocols/PMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/core/com/server/Server$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/server/Server$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/core/com/server/Server$Handler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/server/Server$Handler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/core/com/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/server/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/lobby/community/Listener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/lobby/community/Listener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/messenger/MessengerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/messenger/MessengerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/messenger/Sender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/messenger/Sender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/protocols/PMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/protocols/PMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
-    </list>
+    <list default="true" id="bf0d7099-d04b-4d72-8974-c9ae50591284" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +148,7 @@
       <workItem from="1572213667555" duration="2257000" />
       <workItem from="1572265773859" duration="2136000" />
       <workItem from="1572340160288" duration="2693000" />
-      <workItem from="1572409214579" duration="4746000" />
+      <workItem from="1572409214579" duration="5321000" />
     </task>
     <servers />
   </component>

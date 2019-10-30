@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="core:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bf0d7099-d04b-4d72-8974-c9ae50591284" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/META-INF/core.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/com/lobby/community/Listener$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/lobby/community/Listener$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/com/lobby/community/Listener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/lobby/community/Listener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/com/messenger/MessengerController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/messenger/MessengerController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/com/messenger/MessengerController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/messenger/MessengerController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/com/messenger/MessengerController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/messenger/MessengerController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/com/messenger/MessengerController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/messenger/MessengerController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/com/messenger/MessengerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/messenger/MessengerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/com/messenger/Sender.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/messenger/Sender.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/com/protocols/PMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/protocols/PMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/com/server/Server$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/server/Server$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/com/server/Server$Handler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/server/Server$Handler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/com/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/server/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/lobby/community/Listener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/lobby/community/Listener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/messenger/MessengerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/messenger/MessengerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/messenger/Sender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/messenger/Sender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/protocols/PMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/protocols/PMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1Sdusd1ax9TvRFCsORHytDwCfRX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.messenger" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/styles" />
+      <recent name="$PROJECT_DIR$/src/main/resources/views" />
+      <recent name="$PROJECT_DIR$/src/main/resources/images" />
+      <recent name="$PROJECT_DIR$/src/main/com" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.MainLauncher">
+    <configuration name="MainLauncher" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lobby.login.MainLauncher" />
+      <module name="core" />
+      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules=javafx.controls,javafx.fxml,javafx.graphics,javafx.media " />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lobby.login.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.server.Server" />
+      <module name="core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.server.ServerLauncher" />
+      <module name="core" />
+      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules=javafx.controls,javafx.fxml,javafx.graphics,javafx.media " />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.MainLauncher" />
+      <item itemvalue="Application.ServerLauncher" />
+      <item itemvalue="Application.Server" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainLauncher" />
+        <item itemvalue="Application.Server" />
+        <item itemvalue="Application.ServerLauncher" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bf0d7099-d04b-4d72-8974-c9ae50591284" name="Default Changelist" comment="" />
+      <created>1571906001580</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1571906001580</updated>
+      <workItem from="1571906003106" duration="3618000" />
+      <workItem from="1571909985149" duration="12580000" />
+      <workItem from="1571923302729" duration="1505000" />
+      <workItem from="1571928848226" duration="3274000" />
+      <workItem from="1571932219988" duration="2747000" />
+      <workItem from="1571953379210" duration="16668000" />
+      <workItem from="1571980578655" duration="3155000" />
+      <workItem from="1572162554601" duration="14542000" />
+      <workItem from="1572182247015" duration="4785000" />
+      <workItem from="1572213667555" duration="2257000" />
+      <workItem from="1572265773859" duration="2136000" />
+      <workItem from="1572340160288" duration="2693000" />
+      <workItem from="1572409214579" duration="4746000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

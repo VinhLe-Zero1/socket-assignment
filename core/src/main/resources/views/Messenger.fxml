@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="background" maxHeight="700.0" maxWidth="700.0" minHeight="500.0" minWidth="500.0" prefHeight="600.0" prefWidth="600.0" styleClass="chatbodybg" stylesheets="@../styles/listStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.messenger.MessengerController">
+    <children>
+          <ScrollPane fx:id="messageList" layoutX="13.0" layoutY="17.0" maxHeight="600.0" maxWidth="690.0" minHeight="400.0" minWidth="490.0" opacity="0.7" prefHeight="498.0" prefWidth="574.0" style="-fx-hbar-policy: never; -fx-vbar-policy: never;" styleClass="viewport" stylesheets="@../styles/listStyle.css">
+         <padding>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+         </padding>
+      </ScrollPane>
+        <Pane layoutX="12.0" layoutY="504.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="89.0" prefWidth="582.0">
+            <children>
+                <TextArea fx:id="messageSendBox" layoutX="10.0" layoutY="32.0" prefHeight="39.0" prefWidth="437.0" promptText="Type a message !!!" style="-fx-border-width: 0;" />
+                <ImageView fx:id="messageSendButton" fitHeight="39.0" fitWidth="38.0" layoutX="453.0" layoutY="32.0" nodeOrientation="INHERIT" pickOnBounds="true" rotate="90.0" style="-fx-cursor: hand;">
+                    <image>
+                        <Image url="@../images/send.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="fileAttachButton" fitHeight="39.0" fitWidth="47.0" layoutX="491.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                    <image>
+                        <Image url="@../images/file.png" />
+                    </image>
+                </ImageView>
+                <ColorPicker fx:id="themeChangeButton" accessibleRole="IMAGE_VIEW" layoutX="530.0" layoutY="38.0" prefHeight="27.0" prefWidth="38.0" style="-fx-cursor: hand; -fx-background-color: transparent;" stylesheets="@../styles/listStyle.css">
+                    <styleClass>
+                        <String fx:value="color-picker" />
+                        <String fx:value="color-picker-label" />
+                    </styleClass>
+                </ColorPicker>
+            </children>
+        </Pane>
+    </children>
+</Pane>

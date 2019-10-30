@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: blue; -fx-min-height: 680; -fx-min-width: 600;" styleClass="chatbodybg" stylesheets="@../styles/listStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutY="52.0" minHeight="643.0" minWidth="510.0" prefHeight="643.0" prefWidth="630.0" style="-fx-min-height: 680; -fx-min-width: 630; -fx-background-image: url(../images/galaxy.jpg);;">
+         <children>
+            <TextArea fx:id="messageSendBox" layoutX="4.0" layoutY="554.0" prefHeight="39.0" prefWidth="385.0" promptText="Type a sMessage !!!" style="-fx-border-width: 0;" />
+            <ImageView fx:id="messageSendButton" fitHeight="39.0" fitWidth="38.0" layoutX="402.0" layoutY="554.0" nodeOrientation="INHERIT" pickOnBounds="true" rotate="90.0" style="-fx-cursor: hand;">
+               <image>
+                  <Image url="@../images/send.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="fileAttachButton" fitHeight="39.0" fitWidth="47.0" layoutX="441.0" layoutY="554.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+               <image>
+                  <Image url="@../images/file.png" />
+               </image>
+            </ImageView>
+            <ColorPicker fx:id="themeChangeButton" accessibleRole="IMAGE_VIEW" layoutX="480.0" layoutY="560.0" prefHeight="27.0" prefWidth="38.0" style="-fx-cursor: hand; -fx-background-color: transparent;" stylesheets="@../styles/listStyle.css">
+               <styleClass>
+                  <String fx:value="color-picker" />
+                  <String fx:value="color-picker-label" />
+               </styleClass>
+            </ColorPicker>
+            <ImageView fx:id="saveMessageButton" fitHeight="38.0" fitWidth="38.0" layoutX="518.0" layoutY="555.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+               <image>
+                  <Image url="@../images/save.png" />
+               </image>
+            </ImageView>
+            <ScrollPane fx:id="messageList" layoutX="8.0" layoutY="14.0" prefHeight="523.0" prefWidth="585.0" style="-fx-hbar-policy: never; -fx-vbar-policy: never;" stylesheets="@../styles/listStyle.css">
+               <styleClass>
+                  <String fx:value="viewport" />
+                  <String fx:value="viewport" />
+               </styleClass></ScrollPane>
+            <ImageView fx:id="loadMessageIcon" fitHeight="38.0" fitWidth="39.0" layoutX="555.0" layoutY="556.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+               <image>
+                  <Image url="@../images/loadIcon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="-7.0" layoutY="-1.0" minWidth="539.0" prefHeight="55.0" prefWidth="539.0" style="-fx-background-color: oran linear-gradient(to right, #0f2027, #203a43, #2c5364)ge; -fx-min-width: 630;">
+         <children>
+            <Label fx:id="listeningAtLabel" layoutX="23.0" layoutY="14.0" style="-fx-padding: 5; -fx-background-radius: 2;" text="Label" textFill="WHITE" />
+            <Label fx:id="chatUserNameLabel" layoutX="266.0" layoutY="14.0" style="-fx-padding: 5; -fx-background-radius: 2;" text="Label" textFill="WHITE" />
+            <Label fx:id="connectedToLabel" layoutX="424.0" layoutY="14.0" style="-fx-padding: 5; -fx-background-radius: 2;" text="Label" textFill="WHITE" />
+         </children>
+      </Pane>
+   </children>
+</Pane>

@@ -67,7 +67,12 @@ public class ServerIO {
             public void onData(SocketIOClient client, SMessage data, AckRequest ackSender) throws Exception {
                 checkDupplicate(client, data);
 
-                ListenerIO listener = new ListenerIO("localhost", 9001, data.getName(), null, instance);
+                String imageSrc = "images/default.png";
+
+                if (data.getName().substring(0,1).matches("[a-zA-Z]"))
+                    imageSrc = "images/alphabet/" + data.getName().substring(0,1).toLowerCase() + ".png";
+
+                ListenerIO listener = new ListenerIO("localhost", 9001, data.getName(), imageSrc, instance);
 
                 sessionIds.put(data.getName(), client.getSessionId());
                 ioListeners.put(data.getName(), listener);

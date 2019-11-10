@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="netty-socketio">
+    <CLASSES>
+      <root url="file://$USER_HOME$/IdeaProjects/netty-socketio" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$USER_HOME$/IdeaProjects/netty-socketio" recursive="false" />
+  </library>
+</component>

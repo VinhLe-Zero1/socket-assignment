@@ -1,12 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="core:jar" />
-    </artifacts-to-build>
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf0d7099-d04b-4d72-8974-c9ae50591284" name="Default Changelist" comment="" />
+    <list default="true" id="13aaeece-6205-4681-9e38-484338090da9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/io_socket_engine_io_server_1_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/netty_socketio.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/com/lobby/community/ListenerIO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/com/server/ServerIO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/core_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/META-INF/CN-assignment-1.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/exception/DuplicateUsernameException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/exception/exception.plantuml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/community/CellRenderer$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/community/CellRenderer$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/community/CellRenderer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/community/ChatController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/community/ChatController$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/community/ChatController$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/community/ChatController$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/community/ChatController$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/community/ChatController$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/community/ChatController$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/community/ChatController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/community/Listener$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/community/Listener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/community/chatwindow.plantuml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/community/community.plantuml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/login/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/login/MainLauncher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/login/login.plantuml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/util/ImageUtil$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/util/ImageUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/util/ResizeHelper$ResizeListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/util/ResizeHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/util/VoicePlayback$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/util/VoicePlayback.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/util/VoiceRecorder$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/util/VoiceRecorder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/util/VoiceUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/lobby/util/util.plantuml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/messenger/MessengerController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/messenger/MessengerController$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/messenger/MessengerController$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/messenger/MessengerController$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/messenger/MessengerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/messenger/Receiver$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/messenger/Receiver$1$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/messenger/Receiver$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/messenger/Receiver$2$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/messenger/Receiver$2$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/messenger/Receiver$2$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/messenger/Receiver$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/messenger/Receiver$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/messenger/Receiver$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/messenger/Receiver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/messenger/Sender$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/messenger/Sender$1$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/messenger/Sender$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/messenger/Sender$2$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/messenger/Sender$2$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/messenger/Sender$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/messenger/Sender.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/messenger/messenger.plantuml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/protocols/PMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/protocols/PMessageType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/protocols/Peer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/protocols/SMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/protocols/SMessageType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/protocols/Status.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/protocols/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/protocols/bubble/Bubble$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/protocols/bubble/Bubble.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/protocols/bubble/BubbleSpec.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/protocols/bubble/BubbledLabel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/protocols/bubble/BubbledLabel$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/protocols/bubble/BubbledLabel$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/protocols/bubble/BubbledLabel$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/protocols/bubble/BubbledLabel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/protocols/bubble/bubble.plantuml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/protocols/protocols.plantuml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/server/Server$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/server/Server$Handler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/server/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/server/ServerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/server/ServerLauncher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/server/server.plantuml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/traynotifications/animations/AnimationProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/traynotifications/animations/AnimationType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/traynotifications/animations/FadeAnimation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/traynotifications/animations/PopupAnimation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/traynotifications/animations/SlideAnimation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/traynotifications/animations/TrayAnimation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/traynotifications/animations/animations.plantuml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/traynotifications/models/CustomStage$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/traynotifications/models/CustomStage$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/traynotifications/models/CustomStage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/traynotifications/models/Location.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/traynotifications/models/models.plantuml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/traynotifications/notification/NotificationType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/traynotifications/notification/TrayNotification$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/traynotifications/notification/TrayNotification.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/com/traynotifications/notification/notification.plantuml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/images/background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/images/bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/images/chatBg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/images/galaxy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/main.plantuml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/resources/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/resources/images/background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/resources/images/bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/resources/images/chatBg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/resources/images/galaxy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/resources/sounds/notification.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/resources/sounds/record.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/resources/styles/ButtonStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/resources/styles/ChatViewStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/resources/styles/ComboBox.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/resources/styles/ListViewStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/resources/styles/Login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/resources/styles/listStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/resources/views/ChatScreen.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/resources/views/ChatView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/resources/views/LoginView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/resources/views/Messenger.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/resources/views/ServerUI.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/resources/views/TrayNotification.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/resources/views/WelcomeScreen.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/sounds/notification.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/sounds/record.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/styles/ButtonStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/styles/ChatViewStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/styles/ComboBox.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/styles/ListViewStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/styles/Login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/styles/listStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/views/ChatScreen.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/views/ChatView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/views/LoginView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/views/Messenger.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/views/ServerUI.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/views/TrayNotification.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CN-assignment-1/views/WelcomeScreen.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/src/core.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/lobby/community/Listener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/lobby/community/Listener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doc/doc.log" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/doc.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doc/doc.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/doc.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doc/doc.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/doc.synctex.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doc/doc.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/doc.tex" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +164,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -31,32 +174,24 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
-  <component name="ProjectId" id="1Sdusd1ax9TvRFCsORHytDwCfRX" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1TFP8xo1TZ91mczQOM420FlklZn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Downloaded.Files.Path" value="$USER_HOME$/IdeaProjects/socketio" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.messenger" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/styles" />
-      <recent name="$PROJECT_DIR$/src/main/resources/views" />
-      <recent name="$PROJECT_DIR$/src/main/resources/images" />
-      <recent name="$PROJECT_DIR$/src/main/com" />
+      <recent name="com.lobby.community" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -72,7 +207,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.MainLauncher">
-    <configuration name="MainLauncher" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+    <configuration name="MainLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.lobby.login.MainLauncher" />
       <module name="core" />
       <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules=javafx.controls,javafx.fxml,javafx.graphics,javafx.media " />
@@ -99,10 +234,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServerLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.server.ServerLauncher" />
+    <configuration name="ServerIO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.server.ServerIO" />
       <module name="core" />
-      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules=javafx.controls,javafx.fxml,javafx.graphics,javafx.media " />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.server.*" />
@@ -115,14 +249,14 @@
     </configuration>
     <list>
       <item itemvalue="Application.MainLauncher" />
-      <item itemvalue="Application.ServerLauncher" />
       <item itemvalue="Application.Server" />
+      <item itemvalue="Application.ServerIO" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainLauncher" />
         <item itemvalue="Application.Server" />
-        <item itemvalue="Application.ServerLauncher" />
+        <item itemvalue="Application.ServerIO" />
       </list>
     </recent_temporary>
   </component>
@@ -131,24 +265,17 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="bf0d7099-d04b-4d72-8974-c9ae50591284" name="Default Changelist" comment="" />
-      <created>1571906001580</created>
+      <changelist id="13aaeece-6205-4681-9e38-484338090da9" name="Default Changelist" comment="" />
+      <created>1573052714929</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1571906001580</updated>
-      <workItem from="1571906003106" duration="3618000" />
-      <workItem from="1571909985149" duration="12580000" />
-      <workItem from="1571923302729" duration="1505000" />
-      <workItem from="1571928848226" duration="3274000" />
-      <workItem from="1571932219988" duration="2747000" />
-      <workItem from="1571953379210" duration="16668000" />
-      <workItem from="1571980578655" duration="3155000" />
-      <workItem from="1572162554601" duration="14542000" />
-      <workItem from="1572182247015" duration="4785000" />
-      <workItem from="1572213667555" duration="2257000" />
-      <workItem from="1572265773859" duration="2136000" />
-      <workItem from="1572340160288" duration="2693000" />
-      <workItem from="1572409214579" duration="5321000" />
+      <updated>1573052714929</updated>
+      <workItem from="1573052722034" duration="640000" />
+      <workItem from="1573093920673" duration="3610000" />
+      <workItem from="1573111675563" duration="3303000" />
+      <workItem from="1573117683605" duration="3000" />
+      <workItem from="1573304253018" duration="1677000" />
+      <workItem from="1573359345276" duration="8112000" />
     </task>
     <servers />
   </component>
@@ -167,8 +294,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

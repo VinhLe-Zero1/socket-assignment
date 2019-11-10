@@ -1,9 +1,12 @@
 package com.lobby.community;
 
+import com.corundumstudio.socketio.SocketIOClient;
+import com.corundumstudio.socketio.SocketIOServer;
 import com.lobby.login.LoginController;
-import com.protocols.*;
 import com.messenger.Receiver;
 import com.messenger.Sender;
+import com.protocols.*;
+import com.server.ServerIO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,7 +18,7 @@ import java.util.Random;
 
 import static com.protocols.SMessageType.CONNECTED;
 
-public class Listener implements Runnable{
+public class ListenerIO implements Runnable{
 
     private static final String HASCONNECTED = "has connected";
     private static final String COMMUNITY = "#Community";
@@ -30,28 +33,28 @@ public class Listener implements Runnable{
     public static String hostname;
     public int port;
     public static String username;
-    public CommunityController controller;
+    public ServerIO controller;
     private static ObjectOutputStream oos;
     public static String channel;
     private InputStream is;
     private ObjectInputStream input;
     private OutputStream outputStream;
     private static String ipAddress;
-    Logger logger = LoggerFactory.getLogger(Listener.class);
+    Logger logger = LoggerFactory.getLogger(ListenerIO.class);
 
-    public Listener(String hostname, int port, String username, String picture, CommunityController controller) throws UnknownHostException, SocketException {
+    public ListenerIO(String hostname, int port, String username, String picture, ServerIO controller) throws UnknownHostException, SocketException {
         this.port = port;
         this.controller = controller;
-        Listener.random = new Random();
-        Listener.ipAddress = getRealIP();
-        Listener.hostname = hostname;
-        Listener.username = username;
-        Listener.picture = picture;
-        Listener.community = new User(COMMUNITY, COMMUNITY_IMAGE, "ONLINE");
-        Listener.channel = "#Community";
+        ListenerIO.random = new Random();
+//        ListenerIO.ipAddress = getRealIP();
+        ListenerIO.hostname = hostname;
+        ListenerIO.username = username;
+        ListenerIO.picture = picture;
+        ListenerIO.community = new User(COMMUNITY, COMMUNITY_IMAGE, "ONLINE");
+        ListenerIO.channel = "#Community";
     }
 
-    private String getRealIP() throws SocketException {
+//    private String getRealIP() throws SocketException {
 //        Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
 //        while (((Enumeration) interfaces).hasMoreElements()) {
 //            NetworkInterface networkInterface = interfaces.nextElement();
@@ -67,15 +70,8 @@ public class Listener implements Runnable{
 //                    return addr.getHostAddress();
 //            }
 //        }
-//       throw new SocketException("Can not get IP address");
-        try(final DatagramSocket socket = new DatagramSocket()){
-            socket.connect(InetAddress.getByName("8.8.8.8"), 10002);
-            return socket.getLocalAddress().getHostAddress();
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
+//        throw new SocketException("Can not get IP address");
+//    }
 
 
 
@@ -83,7 +79,6 @@ public class Listener implements Runnable{
     public void run() {
         try {
             socket = new Socket(hostname, port);
-            LoginController.getInstance().showScene();
             outputStream = socket.getOutputStream();
             oos = new ObjectOutputStream(outputStream);
             is = socket.getInputStream();
@@ -92,7 +87,7 @@ public class Listener implements Runnable{
             LoginController.getInstance().showErrorDialog("Could not connect to server");
             logger.error("Could not Connect");
         }
-        logger.info("Connection accepted " + socket.getInetAddress() + ":" + socket.getPort());
+        logger.info(ListenerIO.ipAddress + " connection accepted " + socket.getInetAddress() + ":" + socket.getPort());
 
         try {
             connect();
@@ -105,41 +100,41 @@ public class Listener implements Runnable{
                     logger.info("Message recieved:" + sMessage.getMsg() + " MessageType:" + sMessage.getType() + " Name:" + sMessage.getName() + " Channel: " + sMessage.getChannel());
                     switch (sMessage.getType()) {
                         case USER:
-                            controller.addToChat(sMessage);
+                            controller.send(sMessage);
                             break;
-                        case VOICE:
-                            logger.info(sMessage.getType() + " - " + sMessage.getVoiceMsg().length);
-                            controller.addToChat(sMessage);
-                            break;
-                        case NOTIFICATION:
-                            controller.newUserNotification(sMessage);
-                            break;
-                        case SERVER:
-                            controller.addAsServer(sMessage);
-                            break;
-                        case CONNECTED:
-                            controller.setUserList(sMessage);
-                            break;
-                        case DISCONNECTED:
-                            controller.setUserList(sMessage);
-                            break;
-                        case STATUS:
-                            controller.setUserList(sMessage);
-                            break;
-                        case PICTURE:
-                            controller.addToChat(sMessage);
-                            break;
-                        case OPENP2P:
-                            if (!peers.containsKey(sMessage.getName()))
-                                openP2PConnection(sMessage.getName());
-                            waitForConnection(sMessage);
-                            break;
-                        case CLOSEP2P:
-                            if (peers.containsKey(sMessage.getName()))
-                                closeP2PConnection(sMessage.getName());
-                            controller.closeMessenger(sMessage);
-                        case CHANNEL:
-                            break;
+//                        case VOICE:
+//                            logger.info(sMessage.getType() + " - " + sMessage.getVoiceMsg().length);
+//                            controller.send(sMessage);
+//                            break;
+//                        case NOTIFICATION:
+//                            controller.newUserNotification(sMessage);
+//                            break;
+//                        case SERVER:
+//                            controller.addAsServer(sMessage);
+//                            break;
+//                        case CONNECTED:
+//                            controller.setUserList(sMessage);
+//                            break;
+//                        case DISCONNECTED:
+//                            controller.setUserList(sMessage);
+//                            break;
+//                        case STATUS:
+//                            controller.setUserList(sMessage);
+//                            break;
+//                        case PICTURE:
+//                            controller.addToChat(sMessage);
+//                            break;
+//                        case OPENP2P:
+//                            if (!peers.containsKey(sMessage.getName()))
+//                                openP2PConnection(sMessage.getName());
+//                            waitForConnection(sMessage);
+//                            break;
+//                        case CLOSEP2P:
+//                            if (peers.containsKey(sMessage.getName()))
+//                                closeP2PConnection(sMessage.getName());
+//                            controller.closeMessenger(sMessage);
+//                        case CHANNEL:
+//                            break;
                     }
                 }
             }
@@ -147,15 +142,15 @@ public class Listener implements Runnable{
             input.close();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
-            controller.logoutScene();
+//            controller.logoutScene();
         }
 
     }
 
     private void waitForConnection(SMessage sMessage) throws IOException {
-        controller.openMessenger(sMessage,
-                new Sender(sMessage.getPeer().getSourceHost(), peers.get(sMessage.getName())),
-                new Receiver(sMessage.getPeer().getSourcePort()));
+//        controller.openMessenger(sMessage,
+//                new Sender(sMessage.getPeer().getSourceHost(), peers.get(sMessage.getName())),
+//                new Receiver(sMessage.getPeer().getSourcePort()));
     }
 
     public static void closeP2PConnection(String name) throws IOException {

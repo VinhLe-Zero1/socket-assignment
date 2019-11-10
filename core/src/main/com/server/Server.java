@@ -134,6 +134,9 @@ public class Server implements Runnable{
                             case CLOSEP2P:
                                 closeP2P(inputmsg);
                                 break;
+                            case DISCONNECTED:
+                                socket.close();
+                                break;
                             default:
                                 logger.warn("Message ignored cause uncaught  UnknownType!");
                         }

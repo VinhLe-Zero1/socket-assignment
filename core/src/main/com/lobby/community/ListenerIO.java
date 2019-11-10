@@ -13,6 +13,7 @@ import java.util.Random;
 import java.util.UUID;
 
 import static com.protocols.SMessageType.CONNECTED;
+import static com.protocols.SMessageType.DISCONNECTED;
 
 public class ListenerIO implements Runnable{
 
@@ -21,31 +22,33 @@ public class ListenerIO implements Runnable{
 
     public static User community;
     private static String picture;
-    private Socket socket;
+
     public static String hostname;
-    public int port;
     public static String username;
-    public SocketIOServer controller;
     private static ObjectOutputStream oos;
     public static String channel;
+
+    private Socket socket;
+    public int port;
+    public SocketIOServer controller;
     private InputStream is;
     private ObjectInputStream input;
     private OutputStream outputStream;
-    private static UUID userId;
+    private UUID userId;
 
     Logger logger = LoggerFactory.getLogger(ListenerIO.class);
 
     public ListenerIO(String hostname, int port, String username, UUID userId,String picture) throws IOException {
         this.port = port;
         this.controller = ServerIO.server;
+        this.userId = userId;
         ListenerIO.random = new Random();
         ListenerIO.hostname = hostname;
         ListenerIO.username = username;
-        ListenerIO.userId = userId;
         ListenerIO.picture = picture;
         ListenerIO.channel = "Admin";
-        ListenerIO.sendChannelUpadte("Admin");
-        logger.info(controller == null ? "Null" : "Controller already");
+
+        logger.info(controller == null ? "Null" : userId.toString());
     }
 
 
@@ -59,7 +62,6 @@ public class ListenerIO implements Runnable{
             is = socket.getInputStream();
             input = new ObjectInputStream(is);
         } catch (IOException e) {
-            LoginController.getInstance().showErrorDialog("Could not connect to server");
             logger.error("Could not Connect");
         }
         logger.info("Connection accepted " + socket.getInetAddress() + ":" + socket.getPort());
@@ -67,13 +69,14 @@ public class ListenerIO implements Runnable{
         try {
             connect();
             logger.info("Sockets in and out ready!");
+            ListenerIO.sendChannelUpadte(channel);
             while (socket.isConnected()) {
                 SMessage sMessage = null;
                 sMessage = (SMessage) input.readObject();
 
                 if (sMessage != null) {
 
-                    logger.info("Message recieved:" + sMessage.getMessage() + " MessageType:" + sMessage.getType() + " Name:" + sMessage.getName() + " Channel: " + sMessage.getChannel());
+                    logger.info(userId.toString() + " recieved:" + sMessage.getMessage() + " MessageType:" + sMessage.getType() + " Name:" + sMessage.getName() + " Channel: " + sMessage.getChannel());
                     switch (sMessage.getType()) {
                         case USER:
                             controller.getClient(userId).sendEvent("message", sMessage);
@@ -83,7 +86,7 @@ public class ListenerIO implements Runnable{
 //                            controller.send(sMessage);
 //                            break;
 //                        case NOTIFICATION:
-//                            controller.newUserNotification(sMessage);
+//                            controller.getClient(userId).sendEvent("notification");
 //                            break;
 //                        case SERVER:
 //                            controller.addAsServer(sMessage);
@@ -118,7 +121,6 @@ public class ListenerIO implements Runnable{
             input.close();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
-//            controller.logoutScene();
         }
 
     }
@@ -206,4 +208,9 @@ public class ListenerIO implements Runnable{
         oos.writeObject(createSMessage);
     }
 
+    public void disconnect() throws IOException {
+        socket.getOutputStream().close();
+        socket.getInputStream().close();
+        socket.close();
+    }
 }

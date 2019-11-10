@@ -51,22 +51,6 @@ public class Listener implements Runnable{
     }
 
     private String getRealIP() throws SocketException {
-//        Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
-//        while (((Enumeration) interfaces).hasMoreElements()) {
-//            NetworkInterface networkInterface = interfaces.nextElement();
-//            // drop inactive
-//            if (!networkInterface.isUp())
-//                continue;
-//
-//            // smth we can explore
-//            Enumeration<InetAddress> addresses = networkInterface.getInetAddresses();
-//            while(addresses.hasMoreElements()) {
-//                InetAddress addr = addresses.nextElement();
-//                if (addr.getHostAddress().matches("192\\.168.*"))
-//                    return addr.getHostAddress();
-//            }
-//        }
-//       throw new SocketException("Can not get IP address");
         try(final DatagramSocket socket = new DatagramSocket()){
             socket.connect(InetAddress.getByName("8.8.8.8"), 10002);
             return socket.getLocalAddress().getHostAddress();

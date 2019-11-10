@@ -157,7 +157,7 @@ public class Server implements Runnable{
             msg.setName(user.getName());
             msg.setPeer(inputmsg.getPeer());
             msg.setType(SMessageType.CLOSEP2P);
-            msg.setMsg("");
+            msg.setMessage("");
             writers.get(inputmsg.getPeer().getName()).writeObject(msg);
             writers.get(inputmsg.getPeer().getName()).reset();
             return msg;
@@ -172,7 +172,7 @@ public class Server implements Runnable{
 
             msg.setPeer(inputmsg.getPeer());
             msg.setType(SMessageType.OPENP2P);
-            msg.setMsg("");
+            msg.setMessage("");
             writers.get(inputmsg.getPeer().getName()).writeObject(msg);
             writers.get(inputmsg.getPeer().getName()).reset();
             return msg;
@@ -183,7 +183,7 @@ public class Server implements Runnable{
             SMessage msg = new SMessage();
             msg.setName(user.getName());
             msg.setType(SMessageType.STATUS);
-            msg.setMsg("");
+            msg.setMessage("");
             User userObj = names.get(name);
             userObj.setStatus(inputmsg.getStatus());
             write(msg);
@@ -216,7 +216,7 @@ public class Server implements Runnable{
 
         private SMessage sendNotification(SMessage firstSMessage) throws IOException {
             SMessage msg = new SMessage();
-            msg.setMsg("has joined the chat.");
+            msg.setMessage("has joined the chat.");
             msg.setType(SMessageType.NOTIFICATION);
             msg.setName(firstSMessage.getName());
             msg.setPicture(firstSMessage.getPicture());
@@ -228,7 +228,7 @@ public class Server implements Runnable{
         private SMessage removeFromList() throws IOException {
             logger.debug("removeFromList() method Enter");
             SMessage msg = new SMessage();
-            msg.setMsg("has left the chat.");
+            msg.setMessage("has left the chat.");
             msg.setType(SMessageType.DISCONNECTED);
             msg.setName("SERVER");
             msg.setUserlist(names);
@@ -242,7 +242,7 @@ public class Server implements Runnable{
          */
         private SMessage addToList() throws IOException {
             SMessage msg = new SMessage();
-            msg.setMsg("Welcome, You have now joined the server! Enjoy chatting!");
+            msg.setMessage("Welcome, You have now joined the server! Enjoy chatting!");
             msg.setType(SMessageType.CONNECTED);
             msg.setName("SERVER");
             write(msg);

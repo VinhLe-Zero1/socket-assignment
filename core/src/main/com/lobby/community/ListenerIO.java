@@ -1,10 +1,7 @@
 package com.lobby.community;
 
-import com.corundumstudio.socketio.SocketIOClient;
 import com.corundumstudio.socketio.SocketIOServer;
 import com.lobby.login.LoginController;
-import com.messenger.Receiver;
-import com.messenger.Sender;
 import com.protocols.*;
 import com.server.ServerIO;
 import org.slf4j.Logger;
@@ -12,20 +9,15 @@ import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.net.*;
-import java.util.Enumeration;
-import java.util.HashMap;
 import java.util.Random;
+import java.util.UUID;
 
 import static com.protocols.SMessageType.CONNECTED;
 
 public class ListenerIO implements Runnable{
 
     private static final String HASCONNECTED = "has connected";
-    private static final String COMMUNITY = "#Community";
-    private static final String COMMUNITY_IMAGE = "images/alphabet/#.png";
     private static Random random;
-
-    private static HashMap<String, Integer> peers = new HashMap<>();
 
     public static User community;
     private static String picture;
@@ -33,45 +25,28 @@ public class ListenerIO implements Runnable{
     public static String hostname;
     public int port;
     public static String username;
-    public ServerIO controller;
+    public SocketIOServer controller;
     private static ObjectOutputStream oos;
     public static String channel;
     private InputStream is;
     private ObjectInputStream input;
     private OutputStream outputStream;
-    private static String ipAddress;
+    private static UUID userId;
+
     Logger logger = LoggerFactory.getLogger(ListenerIO.class);
 
-    public ListenerIO(String hostname, int port, String username, String picture, ServerIO controller) throws UnknownHostException, SocketException {
+    public ListenerIO(String hostname, int port, String username, UUID userId,String picture) throws IOException {
         this.port = port;
-        this.controller = controller;
+        this.controller = ServerIO.server;
         ListenerIO.random = new Random();
-//        ListenerIO.ipAddress = getRealIP();
         ListenerIO.hostname = hostname;
         ListenerIO.username = username;
+        ListenerIO.userId = userId;
         ListenerIO.picture = picture;
-        ListenerIO.community = new User(COMMUNITY, COMMUNITY_IMAGE, "ONLINE");
-        ListenerIO.channel = "#Community";
+        ListenerIO.channel = "Admin";
+        ListenerIO.sendChannelUpadte("Admin");
+        logger.info(controller == null ? "Null" : "Controller already");
     }
-
-//    private String getRealIP() throws SocketException {
-//        Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
-//        while (((Enumeration) interfaces).hasMoreElements()) {
-//            NetworkInterface networkInterface = interfaces.nextElement();
-//            // drop inactive
-//            if (!networkInterface.isUp())
-//                continue;
-//
-//            // smth we can explore
-//            Enumeration<InetAddress> addresses = networkInterface.getInetAddresses();
-//            while(addresses.hasMoreElements()) {
-//                InetAddress addr = addresses.nextElement();
-//                if (addr.getHostAddress().matches("192\\.168.*"))
-//                    return addr.getHostAddress();
-//            }
-//        }
-//        throw new SocketException("Can not get IP address");
-//    }
 
 
 
@@ -87,7 +62,7 @@ public class ListenerIO implements Runnable{
             LoginController.getInstance().showErrorDialog("Could not connect to server");
             logger.error("Could not Connect");
         }
-        logger.info(ListenerIO.ipAddress + " connection accepted " + socket.getInetAddress() + ":" + socket.getPort());
+        logger.info("Connection accepted " + socket.getInetAddress() + ":" + socket.getPort());
 
         try {
             connect();
@@ -97,10 +72,11 @@ public class ListenerIO implements Runnable{
                 sMessage = (SMessage) input.readObject();
 
                 if (sMessage != null) {
-                    logger.info("Message recieved:" + sMessage.getMsg() + " MessageType:" + sMessage.getType() + " Name:" + sMessage.getName() + " Channel: " + sMessage.getChannel());
+
+                    logger.info("Message recieved:" + sMessage.getMessage() + " MessageType:" + sMessage.getType() + " Name:" + sMessage.getName() + " Channel: " + sMessage.getChannel());
                     switch (sMessage.getType()) {
                         case USER:
-                            controller.send(sMessage);
+                            controller.getClient(userId).sendEvent("message", sMessage);
                             break;
 //                        case VOICE:
 //                            logger.info(sMessage.getType() + " - " + sMessage.getVoiceMsg().length);
@@ -147,53 +123,10 @@ public class ListenerIO implements Runnable{
 
     }
 
-    private void waitForConnection(SMessage sMessage) throws IOException {
-//        controller.openMessenger(sMessage,
-//                new Sender(sMessage.getPeer().getSourceHost(), peers.get(sMessage.getName())),
-//                new Receiver(sMessage.getPeer().getSourcePort()));
+    private void sendMessageIO(SMessage sMessage) {
+        controller.getClient(userId).sendEvent("message", sMessage);
     }
 
-    public static void closeP2PConnection(String name) throws IOException {
-        System.out.println(("Close P2P connection to " + name));
-        if (peers.containsKey(name)) {
-            Peer peer = new Peer();
-            peer.setName(name);
-            peer.setSourceHost(ipAddress);
-            peer.setSourcePort(peers.get(name));
-
-            SMessage createSMessage = new SMessage();
-            createSMessage.setName(username);
-            createSMessage.setType(SMessageType.CLOSEP2P);
-            createSMessage.setPeer(peer);
-            oos.writeObject(createSMessage);
-            oos.flush();
-
-            peers.remove(name);
-        }
-    }
-
-
-
-    public static void openP2PConnection(String name) throws IOException {
-        System.out.println(("Open P2P connection to " + name));
-        if (!peers.containsKey(name)) {
-            int randPort;
-            do randPort = random.nextInt(11111) + 11111; while (peers.containsValue(randPort));
-            Peer peer = new Peer();
-            peer.setName(name);
-            peer.setSourceHost(ipAddress);
-            peer.setSourcePort(randPort);
-
-            peers.put(name,randPort);
-
-            SMessage createSMessage = new SMessage();
-            createSMessage.setName(username);
-            createSMessage.setType(SMessageType.OPENP2P);
-            createSMessage.setPeer(peer);
-            oos.writeObject(createSMessage);
-            oos.flush();
-        }
-    }
 
 
     public static void sendPicture(byte[] base64Image) throws IOException{
@@ -229,8 +162,9 @@ public class ListenerIO implements Runnable{
         createSMessage.setName(username);
         createSMessage.setType(SMessageType.USER);
         createSMessage.setStatus(Status.AWAY);
-        createSMessage.setMsg(msg);
+        createSMessage.setMessage(msg);
         createSMessage.setPicture(picture);
+        createSMessage.setChannel(channel);
         oos.writeObject(createSMessage);
         oos.flush();
     }
@@ -267,7 +201,7 @@ public class ListenerIO implements Runnable{
         SMessage createSMessage = new SMessage();
         createSMessage.setName(username);
         createSMessage.setType(CONNECTED);
-        createSMessage.setMsg(HASCONNECTED);
+        createSMessage.setMessage(HASCONNECTED);
         createSMessage.setPicture(picture);
         oos.writeObject(createSMessage);
     }

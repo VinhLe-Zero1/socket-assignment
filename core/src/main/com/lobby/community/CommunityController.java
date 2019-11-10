@@ -161,7 +161,7 @@ public class CommunityController implements Initializable {
                     logger.debug(imageUtil.width + " - " + imageUtil.height);
                 }
                 else {
-                    bl6.setText(msg.getMsg());
+                    bl6.setText(msg.getMessage());
                 }
                 bl6.setBackground(new Background(new BackgroundFill(Color.WHITE,null, null)));
                 HBox x = new HBox();
@@ -221,7 +221,7 @@ public class CommunityController implements Initializable {
                     logger.debug(imageUtil.width + " - " + imageUtil.height);
                 }
                 else {
-                    bl6.setText(msg.getMsg());
+                    bl6.setText(msg.getMessage());
                 }
                 bl6.setBackground(new Background(new BackgroundFill(Color.BLUEVIOLET,
                         null, null)));
@@ -316,7 +316,7 @@ public class CommunityController implements Initializable {
             @Override
             public HBox call() throws Exception {
                 BubbledLabel bl6 = new BubbledLabel();
-                bl6.setText(msg.getMsg());
+                bl6.setText(msg.getMessage());
                 bl6.setBackground(new Background(new BackgroundFill(Color.ALICEBLUE,
                         null, null)));
                 HBox x = new HBox();

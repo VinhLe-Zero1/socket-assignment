@@ -21,20 +21,16 @@ public class ServerIO {
     private static HashMap<String, ListenerIO> ioListeners = new HashMap<>();
     private static HashMap<String, UUID> sessionIds = new HashMap<>();
 
-    public static ServerIO instance;
+    public static SocketIOServer server;
 
     Logger logger = LoggerFactory.getLogger(ServerIO.class);
-
-    public ServerIO() {
-        instance = this;
-    }
 
 
     public static void main(String[] args) {
         Configuration config = new Configuration();
         config.setHostname("localhost");
         config.setPort(7070);
-        final SocketIOServer server = new SocketIOServer(config);
+        server = new SocketIOServer(config);
 
         server.addConnectListener(new ConnectListener() {
             @Override
@@ -48,6 +44,7 @@ public class ServerIO {
             @Override
             public void onDisconnect(SocketIOClient client) {
                 System.out.println("onDisconnected");
+
             }
         });
 
@@ -65,36 +62,40 @@ public class ServerIO {
 
             @Override
             public void onData(SocketIOClient client, SMessage data, AckRequest ackSender) throws Exception {
-                checkDupplicate(client, data);
 
                 String imageSrc = "images/default.png";
 
                 if (data.getName().substring(0,1).matches("[a-zA-Z]"))
                     imageSrc = "images/alphabet/" + data.getName().substring(0,1).toLowerCase() + ".png";
 
-                ListenerIO listener = new ListenerIO("localhost", 9001, data.getName(), imageSrc, instance);
+                ListenerIO listener = new ListenerIO("localhost", 9001, data.getName(), client.getSessionId(), imageSrc);
 
                 sessionIds.put(data.getName(), client.getSessionId());
                 ioListeners.put(data.getName(), listener);
                 Thread x = new Thread(listener);
                 x.start();
-
                 System.out.println("Joined: " + data.getName());
-                server.getBroadcastOperations().sendEvent("message", data);
+
             }
         });
+
+        server.addEventListener("sendMessage", SMessage.class, new DataListener<SMessage>() {
+            @Override
+            public void onData(SocketIOClient socketIOClient, SMessage sMessage, AckRequest ackRequest) throws Exception {
+                ioListeners.get(sMessage.getName()).send(sMessage.getMessage());
+            }
+        });
+
+//        server.addEventListener("sendMessage", SMessage.class, new DataListener<SMessage>() {
+//            @Override
+//            public void onData(SocketIOClient socketIOClient, SMessage sMessage, AckRequest ackRequest) throws Exception {
+//
+//            }
+//        });
+
         System.out.println("Starting server...");
         server.start();
         System.out.println("Server started");
-
-    }
-
-    private static void checkDupplicate(SocketIOClient client, SMessage data) throws DuplicateUsernameException {
-        if (sessionIds.get(data.getName()) != null)
-            throw new DuplicateUsernameException("Username already token");
-    }
-
-    public void send(SMessage sMessage) {
 
     }
 }

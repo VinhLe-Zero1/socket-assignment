@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.net.*;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -102,7 +101,7 @@ public class Listener implements Runnable{
                 sMessage = (SMessage) input.readObject();
 
                 if (sMessage != null) {
-                    logger.info("Message recieved:" + sMessage.getMsg() + " MessageType:" + sMessage.getType() + " Name:" + sMessage.getName() + " Channel: " + sMessage.getChannel());
+                    logger.info("Message recieved:" + sMessage.getMessage() + " MessageType:" + sMessage.getType() + " Name:" + sMessage.getName() + " Channel: " + sMessage.getChannel());
                     switch (sMessage.getType()) {
                         case USER:
                             controller.addToChat(sMessage);
@@ -234,7 +233,7 @@ public class Listener implements Runnable{
         createSMessage.setName(username);
         createSMessage.setType(SMessageType.USER);
         createSMessage.setStatus(Status.AWAY);
-        createSMessage.setMsg(msg);
+        createSMessage.setMessage(msg);
         createSMessage.setPicture(picture);
         oos.writeObject(createSMessage);
         oos.flush();
@@ -272,7 +271,7 @@ public class Listener implements Runnable{
         SMessage createSMessage = new SMessage();
         createSMessage.setName(username);
         createSMessage.setType(CONNECTED);
-        createSMessage.setMsg(HASCONNECTED);
+        createSMessage.setMessage(HASCONNECTED);
         createSMessage.setPicture(picture);
         oos.writeObject(createSMessage);
     }

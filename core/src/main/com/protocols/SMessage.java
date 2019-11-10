@@ -8,7 +8,7 @@ public class SMessage implements Serializable {
 
     private String          name;
     private SMessageType    type;
-    private String          msg;
+    private String          message;
     private int             count;
     private ArrayList<User> users;
     private Status          status;
@@ -56,10 +56,10 @@ public class SMessage implements Serializable {
         this.name = name;
     }
 
-    public String getMsg() { return msg; }
+    public String getMessage() { return message; }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public SMessageType getType() {

@@ -39,6 +39,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -52,15 +53,16 @@ import javafx.util.Duration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Random;
 import java.util.ResourceBundle;
 
 
 public class CommunityController implements Initializable {
+    @FXML private Button fileBtn;
     @FXML private Button imageBtn;
     @FXML public TextArea messageBox;
     @FXML private Label usernameLabel;
@@ -160,6 +162,40 @@ public class CommunityController implements Initializable {
                     });
                     logger.debug(imageUtil.width + " - " + imageUtil.height);
                 }
+                else if (msg.getType() == SMessageType.FILE) {
+                    String fileStream = new String(msg.getFileMsg(), "UTF-8");
+                    String fileName = msg.getMessage();
+                    byte[] byteArray = Base64.getDecoder().decode(fileStream);
+
+                    bl6.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                        @Override
+                        public void handle(MouseEvent mouseEvent) {
+                            FileChooser fileSaver = new FileChooser();
+                            fileSaver.getExtensionFilters().addAll(
+                                    new ExtensionFilter("Compression Files", "*.zip", "*.rar"),
+                                    new ExtensionFilter("Music Files", "*.mp3", "*.wav"),
+                                    new ExtensionFilter("Video Files", "*.mp4", "*.avi", "*.mkv"),
+                                    new ExtensionFilter("Document Files", "*.txt", "*.pdf", "*.docx"));
+
+                            Stage stage = (Stage) borderPane.getScene().getWindow();
+
+                            File file = fileSaver.showSaveDialog(stage);
+                            if (file != null) {
+                                logger.info(file.getAbsolutePath());
+                                try {
+                                    saveFile(file.getAbsolutePath(), byteArray);
+                                } catch (IOException e) {
+                                    // TODO Auto-generated catch block
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                    });
+
+                    bl6.setText(fileName);
+                    bl6.setTextFill(Color.BLUEVIOLET);
+                    bl6.setUnderline(true);
+                }
                 else {
                     bl6.setText(msg.getMessage());
                 }
@@ -174,6 +210,8 @@ public class CommunityController implements Initializable {
                 setOnlineLabel(Integer.toString(msg.getOnlineCount()));
                 return x;
             }
+
+
         };
 
         othersMessages.setOnSucceeded(event -> {
@@ -220,6 +258,39 @@ public class CommunityController implements Initializable {
                     });
                     logger.debug(imageUtil.width + " - " + imageUtil.height);
                 }
+                else if (msg.getType() == SMessageType.FILE) {
+                    String fileStream = new String(msg.getFileMsg(), "UTF-8");
+                    String fileName = msg.getMessage();
+                    byte[] byteArray = Base64.getDecoder().decode(fileStream);
+
+                    bl6.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                        @Override
+                        public void handle(MouseEvent mouseEvent) {
+                            FileChooser fileSaver = new FileChooser();
+                            fileSaver.getExtensionFilters().addAll(
+                                    new ExtensionFilter("Compression Files", "*.zip", "*.rar"),
+                                    new ExtensionFilter("Music Files", "*.mp3", "*.wav"),
+                                    new ExtensionFilter("Video Files", "*.mp4", "*.avi", "*.mkv"),
+                                    new ExtensionFilter("Document Files", "*.txt", "*.pdf", "*.docx"));
+
+                            Stage stage = (Stage) borderPane.getScene().getWindow();
+
+                            File file = fileSaver.showSaveDialog(stage);
+                            if (file != null) {
+                                logger.info(file.getAbsolutePath());
+                                try {
+                                    saveFile(file.getAbsolutePath(), byteArray);
+                                } catch (IOException e) {
+                                    // TODO Auto-generated catch block
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                    });
+
+                    bl6.setText(fileName);
+                    bl6.setUnderline(true);
+                }
                 else {
                     bl6.setText(msg.getMessage());
                 }
@@ -252,6 +323,21 @@ public class CommunityController implements Initializable {
             t.start();
         }
     }
+
+    private void saveFile(String filePath, byte[] byteArray) throws IOException {
+        FileOutputStream fileOutputStream = new FileOutputStream(filePath);
+        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
+        bufferedOutputStream.write(byteArray, 0, byteArray.length);
+        bufferedOutputStream.flush();
+        bufferedOutputStream.close();
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setHeaderText("Congratulation");
+        alert.getDialogPane().setContent(new Label("File is successfully saved as " + filePath));
+        alert.show();
+    }
+
     public void setUsernameLabel(String username) {
         this.usernameLabel.setText(username);
     }
@@ -482,6 +568,40 @@ public class CommunityController implements Initializable {
                 });
             }
         });
+
+        fileBtn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                Platform.runLater(() -> {
+                    final FileChooser fileChooser = new FileChooser();
+                    fileChooser.setTitle("Select a file");
+                    fileChooser.getExtensionFilters().addAll(
+                            new ExtensionFilter("Compression Files", "*.zip", "*.rar"),
+                            new ExtensionFilter("Music Files", "*.mp3", "*.wav"),
+                            new ExtensionFilter("Video Files", "*.mp4", "*.avi", "*.mkv"),
+                            new ExtensionFilter("Document Files", "*.txt", "*.pdf", "*.docx"));
+
+                    String userDirectoryString = System.getProperty("user.home");
+                    fileChooser.setInitialDirectory(new File(userDirectoryString));
+
+                    Stage stage = (Stage) borderPane.getScene().getWindow();
+
+                    File file = fileChooser.showOpenDialog(stage);
+
+                    if (file != null) {
+                        logger.info(file.getPath());
+                        try {
+                            Listener.sendFileMessage(file);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    else logger.info("Filechooser cancel");
+                });
+            }
+        });
+
+
 
 
 

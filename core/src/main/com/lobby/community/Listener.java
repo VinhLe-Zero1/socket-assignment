@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.net.*;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -50,6 +51,8 @@ public class Listener implements Runnable{
         Listener.channel = "#Community";
     }
 
+
+
     private String getRealIP() throws SocketException {
         try(final DatagramSocket socket = new DatagramSocket()){
             socket.connect(InetAddress.getByName("8.8.8.8"), 10002);
@@ -90,8 +93,10 @@ public class Listener implements Runnable{
                         case USER:
                             controller.addToChat(sMessage);
                             break;
+                        case FILE:
+                            controller.addToChat(sMessage);
+                            break;
                         case VOICE:
-                            logger.info(sMessage.getType() + " - " + sMessage.getVoiceMsg().length);
                             controller.addToChat(sMessage);
                             break;
                         case NOTIFICATION:
@@ -133,6 +138,24 @@ public class Listener implements Runnable{
             controller.logoutScene();
         }
 
+    }
+
+    public static void sendFileMessage(File file) throws IOException {
+        byte[] byteArray = new byte[(int) file.length()];
+        FileInputStream fileInputStream = new FileInputStream(file);
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
+        bufferedInputStream.read(byteArray, 0, byteArray.length);
+        String fileName = file.getName();
+
+        SMessage createSMessage = new SMessage();
+        createSMessage.setName(username);
+        createSMessage.setMessage(fileName);
+        createSMessage.setType(SMessageType.FILE);
+        createSMessage.setStatus(Status.AWAY);
+        createSMessage.setFileMsg(Base64.getEncoder().encode(byteArray));
+        createSMessage.setPicture(picture);
+        oos.writeObject(createSMessage);
+        oos.flush();
     }
 
     private void waitForConnection(SMessage sMessage) throws IOException {

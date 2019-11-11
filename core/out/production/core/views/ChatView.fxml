@@ -71,6 +71,15 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
+                  <JFXButton fx:id="fileBtn" alignment="CENTER" ellipsisString="" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="43.0" prefWidth="43.0" scaleShape="false" text=" " textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="26.0">
+                           <image>
+                              <Image url="@../images/attach.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
                </children>
             </HBox>
          </children>

@@ -50,6 +50,7 @@ public class ServerIO {
             @Override
             public void onConnect(SocketIOClient client) {
                 System.out.println("New user wait for connecting..");
+
                 System.out.println(client.getSessionId());
             }
         });
@@ -67,20 +68,18 @@ public class ServerIO {
             }
         });
 
-        server.addEventListener("send", PMessage.class, new DataListener<PMessage>() {
-
-            @Override
-            public void onData(SocketIOClient client, PMessage data, AckRequest ackSender) throws Exception {
-                System.out.println("onSend: " + data.toString());
-                server.getBroadcastOperations().sendEvent("message", data);
-            }
-        });
-
-
         server.addEventListener("join", SMessage.class, new DataListener<SMessage>() {
 
             @Override
             public void onData(SocketIOClient client, SMessage data, AckRequest ackSender) throws Exception {
+                try {
+                    if (checkDupplicate(client.getSessionId())) {
+                        client.sendEvent("error", "Can't have more than 1 app on machine");
+                        return;
+                    }
+                } catch (DuplicateUsernameException e) {
+                    e.printStackTrace();
+                }
 
                 String imageSrc = "images/default.png";
 
@@ -100,7 +99,10 @@ public class ServerIO {
         server.addEventListener("sendMessage", SMessage.class, new DataListener<SMessage>() {
             @Override
             public void onData(SocketIOClient client, SMessage sMessage, AckRequest ackRequest) throws Exception {
-                ioListeners.get(client.getSessionId()).send(sMessage.getMessage());
+                if (ioListeners.containsKey(client.getSessionId()))
+                    ioListeners.get(client.getSessionId()).send(sMessage.getMessage());
+                else
+                    client.sendEvent("error", "Listener closed!");
             }
         });
 
@@ -111,9 +113,16 @@ public class ServerIO {
 //            }
 //        });
 
+
         System.out.println("Starting server...");
         server.start();
         System.out.println("Server started");
 
+    }
+
+    private static boolean checkDupplicate(UUID sessionId) throws DuplicateUsernameException {
+//        if (ioListeners.containsKey(sessionId))
+//            throw new DuplicateUsernameException("Only run an unique app on machine.");
+        return ioListeners.containsKey(sessionId);
     }
 }

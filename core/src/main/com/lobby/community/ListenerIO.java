@@ -81,39 +81,6 @@ public class ListenerIO implements Runnable{
                         case USER:
                             controller.getClient(userId).sendEvent("message", sMessage);
                             break;
-//                        case VOICE:
-//                            logger.info(sMessage.getType() + " - " + sMessage.getVoiceMsg().length);
-//                            controller.send(sMessage);
-//                            break;
-//                        case NOTIFICATION:
-//                            controller.getClient(userId).sendEvent("notification");
-//                            break;
-//                        case SERVER:
-//                            controller.addAsServer(sMessage);
-//                            break;
-//                        case CONNECTED:
-//                            controller.setUserList(sMessage);
-//                            break;
-//                        case DISCONNECTED:
-//                            controller.setUserList(sMessage);
-//                            break;
-//                        case STATUS:
-//                            controller.setUserList(sMessage);
-//                            break;
-//                        case PICTURE:
-//                            controller.addToChat(sMessage);
-//                            break;
-//                        case OPENP2P:
-//                            if (!peers.containsKey(sMessage.getName()))
-//                                openP2PConnection(sMessage.getName());
-//                            waitForConnection(sMessage);
-//                            break;
-//                        case CLOSEP2P:
-//                            if (peers.containsKey(sMessage.getName()))
-//                                closeP2PConnection(sMessage.getName());
-//                            controller.closeMessenger(sMessage);
-//                        case CHANNEL:
-//                            break;
                     }
                 }
             }
@@ -123,10 +90,6 @@ public class ListenerIO implements Runnable{
             e.printStackTrace();
         }
 
-    }
-
-    private void sendMessageIO(SMessage sMessage) {
-        controller.getClient(userId).sendEvent("message", sMessage);
     }
 
 
@@ -171,19 +134,6 @@ public class ListenerIO implements Runnable{
         oos.flush();
     }
 
-    /* This method is used for sending a voice Message
- * @param msg - The message which the user generates
- */
-    public static void sendVoiceMessage(byte[] audio) throws IOException {
-        SMessage createSMessage = new SMessage();
-        createSMessage.setName(username);
-        createSMessage.setType(SMessageType.VOICE);
-        createSMessage.setStatus(Status.AWAY);
-        createSMessage.setVoiceMsg(audio);
-        createSMessage.setPicture(picture);
-        oos.writeObject(createSMessage);
-        oos.flush();
-    }
 
     /* This method is used for sending a normal Message
  * @param msg - The message which the user generates
@@ -209,8 +159,8 @@ public class ListenerIO implements Runnable{
     }
 
     public void disconnect() throws IOException {
-        socket.getOutputStream().close();
-        socket.getInputStream().close();
-        socket.close();
+        if (socket.isConnected()) socket.close();
     }
+
+
 }

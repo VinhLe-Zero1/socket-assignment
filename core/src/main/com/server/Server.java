@@ -111,6 +111,9 @@ public class Server implements Runnable{
                             case USER:
                                 write(inputmsg);
                                 break;
+                            case FILE:
+                                write(inputmsg);
+                                break;
                             case VOICE:
                                 logger.info(inputmsg.getType() + " - " + name + " -> " + channel + ": " + inputmsg.getVoiceMsg().length);
                                 write(inputmsg);

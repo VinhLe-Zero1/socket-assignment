@@ -3,22 +3,37 @@
   <component name="ChangeListManager">
     <list default="true" id="13aaeece-6205-4681-9e38-484338090da9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/com/lobby/community/CommunityController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/lobby/community/CommunityController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/com/lobby/community/CommunityController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/lobby/community/CommunityController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/com/lobby/community/CommunityController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/lobby/community/CommunityController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/com/lobby/community/CommunityController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/lobby/community/CommunityController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/com/lobby/community/CommunityController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/lobby/community/CommunityController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/com/lobby/community/CommunityController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/lobby/community/CommunityController$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/com/lobby/community/CommunityController$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/lobby/community/CommunityController$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/com/lobby/community/CommunityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/lobby/community/CommunityController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/core/com/lobby/community/Listener$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/lobby/community/Listener$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/core/com/lobby/community/Listener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/lobby/community/Listener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/core/com/lobby/community/ListenerIO$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/lobby/community/ListenerIO$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/core/com/lobby/community/ListenerIO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/lobby/community/ListenerIO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/com/protocols/SMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/protocols/SMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/com/protocols/SMessageType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/protocols/SMessageType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/core/com/server/Server$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/server/Server$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/core/com/server/Server$Handler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/server/Server$Handler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/core/com/server/ServerIO$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/server/ServerIO$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/core/com/server/ServerIO$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/server/ServerIO$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/core/com/server/ServerIO$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/server/ServerIO$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/core/com/server/ServerIO$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/server/ServerIO$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/core/com/server/ServerIO$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/server/ServerIO$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/com/server/ServerIO$5.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/core/com/server/ServerIO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/server/ServerIO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/resources/views/ChatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/resources/views/ChatView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/views/ChatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/views/ChatView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/lobby/community/CommunityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/lobby/community/CommunityController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/com/lobby/community/Listener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/lobby/community/Listener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/com/lobby/community/ListenerIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/lobby/community/ListenerIO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/protocols/SMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/protocols/SMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/protocols/SMessageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/protocols/SMessageType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/com/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/server/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/com/server/ServerIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/server/ServerIO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/ChatView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/ChatView.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,6 +68,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/images" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -60,6 +76,9 @@
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.lobby.community" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -75,7 +94,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.MainLauncher">
-    <configuration name="MainLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="MainLauncher" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.lobby.login.MainLauncher" />
       <module name="core" />
       <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules=javafx.controls,javafx.fxml,javafx.graphics,javafx.media " />
@@ -143,7 +162,10 @@
       <workItem from="1573111675563" duration="3303000" />
       <workItem from="1573117683605" duration="3000" />
       <workItem from="1573304253018" duration="1677000" />
-      <workItem from="1573359345276" duration="18628000" />
+      <workItem from="1573359345276" duration="19481000" />
+      <workItem from="1573388452106" duration="9305000" />
+      <workItem from="1573399399512" duration="850000" />
+      <workItem from="1573472740058" duration="4554000" />
     </task>
     <servers />
   </component>

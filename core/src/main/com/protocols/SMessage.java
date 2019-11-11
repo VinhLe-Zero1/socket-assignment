@@ -14,6 +14,7 @@ public class SMessage implements Serializable {
     private Status          status;
     private byte[]          voiceMsg;
     private byte[]          pictureMsg;
+    private byte[]          fileMsg;
     private String          picture;
     private String          channel;
     private Peer            peer;
@@ -32,9 +33,7 @@ public class SMessage implements Serializable {
         this.pictureMsg = pictureMsg;
     }
 
-    public void setChannel(String channel) {
-        this.channel = channel;
-    }
+    public void setChannel(String channel) { this.channel = channel; }
 
     public String getChannel() {
         return channel;
@@ -104,5 +103,13 @@ public class SMessage implements Serializable {
 
     public void setVoiceMsg(byte[] voiceMsg) {
         this.voiceMsg = voiceMsg;
+    }
+
+    public byte[] getFileMsg() {
+        return fileMsg;
+    }
+
+    public void setFileMsg(byte[] fileMsg) {
+        this.fileMsg = fileMsg;
     }
 }

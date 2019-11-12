@@ -18,6 +18,8 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
+import java.nio.charset.Charset;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.UUID;
 
@@ -44,6 +46,7 @@ public class ServerIO {
         Configuration config = new Configuration();
         config.setHostname(host);
         config.setPort(7070);
+        config.setMaxFramePayloadLength(26214400);
         server = new SocketIOServer(config);
 
         server.addConnectListener(new ConnectListener() {
@@ -106,12 +109,51 @@ public class ServerIO {
             }
         });
 
-//        server.addEventListener("sendMessage", SMessage.class, new DataListener<SMessage>() {
-//            @Override
-//            public void onData(SocketIOClient socketIOClient, SMessage sMessage, AckRequest ackRequest) throws Exception {
-//
-//            }
-//        });
+        server.addEventListener("changeChannel", SMessage.class, new DataListener<SMessage>() {
+            @Override
+            public void onData(SocketIOClient client, SMessage sMessage, AckRequest ackRequest) throws Exception {
+                if (ioListeners.containsKey(client.getSessionId()))
+                    ioListeners.get(client.getSessionId()).send(sMessage.getMessage());
+                else
+                    client.sendEvent("error", "Listener closed!");
+            }
+        });
+
+        server.addEventListener("sendStatus", SMessage.class, new DataListener<SMessage>() {
+            @Override
+            public void onData(SocketIOClient client, SMessage sMessage, AckRequest ackRequest) throws Exception {
+                if (ioListeners.containsKey(client.getSessionId()))
+                    ioListeners.get(client.getSessionId()).sendStatusUpdate(sMessage.getStatus());
+                else
+                    client.sendEvent("error", "Listener closed!");
+            }
+        });
+
+        server.addEventListener("sendImage", SMessage.class, new DataListener<SMessage>() {
+            @Override
+            public void onData(SocketIOClient client, SMessage sMessage, AckRequest ackRequest) throws Exception {
+                if (ioListeners.containsKey(client.getSessionId())) {
+                    byte[] byteBase64 = sMessage.getMessage().getBytes();
+
+                    ioListeners.get(client.getSessionId()).sendPicture(byteBase64);
+                }
+                else
+                    client.sendEvent("error", "Listener closed!");
+            }
+        });
+
+        server.addEventListener("sendFile", SMessage.class, new DataListener<SMessage>() {
+            @Override
+            public void onData(SocketIOClient client, SMessage sMessage, AckRequest ackRequest) throws Exception {
+                if (ioListeners.containsKey(client.getSessionId())) {
+
+                    byte[] byteBase64 = sMessage.getMessage().getBytes();
+                    ioListeners.get(client.getSessionId()).sendFile(sMessage.getName(), byteBase64);
+                }
+                else
+                    client.sendEvent("error", "Listener closed!");
+            }
+        });
 
 
         System.out.println("Starting server...");

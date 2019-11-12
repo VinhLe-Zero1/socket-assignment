@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.net.*;
+import java.util.Base64;
 import java.util.Random;
 import java.util.UUID;
 
@@ -81,6 +82,15 @@ public class ListenerIO implements Runnable{
                         case USER:
                             controller.getClient(userId).sendEvent("message", sMessage);
                             break;
+                        case FILE:
+                            controller.getClient(userId).sendEvent("message", sMessage);
+                            break;
+                        case PICTURE:
+                            controller.getClient(userId).sendEvent("message", sMessage);
+                            break;
+                        case NOTIFICATION:
+                            controller.getClient(userId).sendEvent("message", sMessage);
+                            break;
                     }
                 }
             }
@@ -134,6 +144,19 @@ public class ListenerIO implements Runnable{
         oos.flush();
     }
 
+    public static void sendFile(String filename, byte[] fileStream) throws IOException {
+
+        SMessage createSMessage = new SMessage();
+        createSMessage.setName(username);
+        createSMessage.setMessage(filename);
+        createSMessage.setType(SMessageType.FILE);
+        createSMessage.setStatus(Status.AWAY);
+        createSMessage.setFileMsg(fileStream);
+        createSMessage.setPicture(picture);
+        oos.writeObject(createSMessage);
+        oos.flush();
+    }
+
 
     /* This method is used for sending a normal Message
  * @param msg - The message which the user generates
@@ -161,6 +184,7 @@ public class ListenerIO implements Runnable{
     public void disconnect() throws IOException {
         if (socket.isConnected()) socket.close();
     }
+
 
 
 }

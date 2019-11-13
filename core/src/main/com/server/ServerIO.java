@@ -89,21 +89,23 @@ public class ServerIO {
                 if (data.getName().substring(0,1).matches("[a-zA-Z]"))
                     imageSrc = "images/alphabet/" + data.getName().substring(0,1).toLowerCase() + ".png";
 
-                ListenerIO listener = new ListenerIO("localhost", 9001, data.getName(), client.getSessionId(), imageSrc);
+                ListenerIO listener = new ListenerIO(host, 9001, data.getName(), client.getSessionId(), imageSrc);
 
                 ioListeners.put(client.getSessionId(), listener);
                 Thread x = new Thread(listener);
                 x.start();
                 System.out.println("Joined: " + data.getName());
-
             }
         });
 
         server.addEventListener("sendMessage", SMessage.class, new DataListener<SMessage>() {
             @Override
             public void onData(SocketIOClient client, SMessage sMessage, AckRequest ackRequest) throws Exception {
-                if (ioListeners.containsKey(client.getSessionId()))
+                if (ioListeners.containsKey(client.getSessionId())) {
+                    System.out.println(client.getSessionId() + " sent a message!");
                     ioListeners.get(client.getSessionId()).send(sMessage.getMessage());
+
+                }
                 else
                     client.sendEvent("error", "Listener closed!");
             }

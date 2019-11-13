@@ -1,17 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="core:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="13aaeece-6205-4681-9e38-484338090da9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/core_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Messenger.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/ServerGUI.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lib/javafx-swt.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lib/javafx.base.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lib/javafx.controls.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lib/javafx.fxml.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lib/javafx.graphics.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lib/javafx.media.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lib/javafx.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lib/javafx.swing.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lib/javafx.web.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lib/libdecora_sse.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lib/libfxplugins.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lib/libglass.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lib/libglib-lite.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lib/libgstreamer-lite.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lib/libjavafx_font.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lib/libjavafx_iio.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lib/libjfxmedia.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lib/libjfxmedia_avf.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lib/libprism_common.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lib/libprism_es2.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lib/libprism_sw.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lib/src.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/core/com/lobby/community/ListenerIO$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/lobby/community/ListenerIO$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/core/com/lobby/community/ListenerIO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/lobby/community/ListenerIO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/core/com/server/ServerIO$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/server/ServerIO$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/core/com/server/ServerIO$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/server/ServerIO$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/core/com/server/ServerIO$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/server/ServerIO$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/core/com/server/ServerIO$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/server/ServerIO$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/core/com/server/ServerIO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/com/server/ServerIO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/core/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/core/resources/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/com/lobby/community/ListenerIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/lobby/community/ListenerIO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/com/server/ServerIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/server/ServerIO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +76,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/images" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -71,7 +100,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ServerIO">
+  <component name="RunManager" selected="Application.MainLauncher">
     <configuration name="MainLauncher" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.lobby.login.MainLauncher" />
       <module name="core" />
@@ -119,9 +148,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ServerIO" />
         <item itemvalue="Application.MainLauncher" />
         <item itemvalue="Application.Server" />
+        <item itemvalue="Application.ServerIO" />
       </list>
     </recent_temporary>
   </component>
@@ -146,6 +175,8 @@
       <workItem from="1573472740058" duration="12823000" />
       <workItem from="1573514020433" duration="8014000" />
       <workItem from="1573541778279" duration="151000" />
+      <workItem from="1573542033456" duration="969000" />
+      <workItem from="1573624943848" duration="8134000" />
     </task>
     <servers />
   </component>

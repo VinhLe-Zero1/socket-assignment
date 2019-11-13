@@ -14,20 +14,21 @@ import java.util.Random;
 import java.util.UUID;
 
 import static com.protocols.SMessageType.CONNECTED;
-import static com.protocols.SMessageType.DISCONNECTED;
+
 
 public class ListenerIO implements Runnable{
 
-    private static final String HASCONNECTED = "has connected";
-    private static Random random;
+    private final String HASCONNECTED = "has connected";
+    private Random random;
 
-    public static User community;
-    private static String picture;
+    public User community;
+    private String picture;
 
-    public static String hostname;
-    public static String username;
+    public String hostname;
+    public String username;
     private static ObjectOutputStream oos;
-    public static String channel;
+    public String channel;
+    public UUID userId;
 
     private Socket socket;
     public int port;
@@ -35,7 +36,7 @@ public class ListenerIO implements Runnable{
     private InputStream is;
     private ObjectInputStream input;
     private OutputStream outputStream;
-    private UUID userId;
+
 
     Logger logger = LoggerFactory.getLogger(ListenerIO.class);
 
@@ -43,11 +44,11 @@ public class ListenerIO implements Runnable{
         this.port = port;
         this.controller = ServerIO.server;
         this.userId = userId;
-        ListenerIO.random = new Random();
-        ListenerIO.hostname = hostname;
-        ListenerIO.username = username;
-        ListenerIO.picture = picture;
-        ListenerIO.channel = "Admin";
+        this.random = new Random();
+        this.hostname = hostname;
+        this.username = username;
+        this.picture = picture;
+        this.channel = "Admin";
 
         logger.info(controller == null ? "Null" : userId.toString());
     }
@@ -70,7 +71,7 @@ public class ListenerIO implements Runnable{
         try {
             connect();
             logger.info("Sockets in and out ready!");
-            ListenerIO.sendChannelUpadte(channel);
+            this.sendChannelUpadte(channel);
             while (socket.isConnected()) {
                 SMessage sMessage = null;
                 sMessage = (SMessage) input.readObject();
@@ -88,9 +89,7 @@ public class ListenerIO implements Runnable{
                         case PICTURE:
                             controller.getClient(userId).sendEvent("message", sMessage);
                             break;
-                        case NOTIFICATION:
-                            controller.getClient(userId).sendEvent("message", sMessage);
-                            break;
+
                     }
                 }
             }
@@ -104,7 +103,7 @@ public class ListenerIO implements Runnable{
 
 
 
-    public static void sendPicture(byte[] base64Image) throws IOException{
+    public void sendPicture(byte[] base64Image) throws IOException{
         SMessage createSMessage = new SMessage();
         createSMessage.setName(username);
         createSMessage.setType(SMessageType.PICTURE);
@@ -119,7 +118,7 @@ public class ListenerIO implements Runnable{
     *   This method is used for sending message update channel
     *   @param msg -
      */
-    public static void sendChannelUpadte(String updatedChannel) throws IOException {
+    public void sendChannelUpadte(String updatedChannel) throws IOException {
         channel = updatedChannel;
         SMessage createSMessage = new SMessage();
         createSMessage.setName(username);
@@ -132,7 +131,7 @@ public class ListenerIO implements Runnable{
     /* This method is used for sending a normal Message
      * @param msg - The message which the user generates
      */
-    public static void send(String msg) throws IOException {
+    public void send(String msg) throws IOException {
         SMessage createSMessage = new SMessage();
         createSMessage.setName(username);
         createSMessage.setType(SMessageType.USER);
@@ -144,7 +143,7 @@ public class ListenerIO implements Runnable{
         oos.flush();
     }
 
-    public static void sendFile(String filename, byte[] fileStream) throws IOException {
+    public void sendFile(String filename, byte[] fileStream) throws IOException {
 
         SMessage createSMessage = new SMessage();
         createSMessage.setName(username);
@@ -161,7 +160,7 @@ public class ListenerIO implements Runnable{
     /* This method is used for sending a normal Message
  * @param msg - The message which the user generates
  */
-    public static void sendStatusUpdate(Status status) throws IOException {
+    public void sendStatusUpdate(Status status) throws IOException {
         SMessage createSMessage = new SMessage();
         createSMessage.setName(username);
         createSMessage.setType(SMessageType.STATUS);
@@ -172,7 +171,7 @@ public class ListenerIO implements Runnable{
     }
 
     /* This method is used to send a connecting message */
-    public static void connect() throws IOException {
+    public void connect() throws IOException {
         SMessage createSMessage = new SMessage();
         createSMessage.setName(username);
         createSMessage.setType(CONNECTED);

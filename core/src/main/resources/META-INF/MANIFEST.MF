@@ -1,3 +1,3 @@
 Manifest-Version: 1.0
-Main-Class: com.lobby.login.MainLauncher
+Main-Class: com.server.ServerIO
 
